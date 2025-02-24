@@ -20,7 +20,7 @@ logfire.instrument_sqlalchemy()
 
 # ------------------------------------------------------
 # Importar Base e BitcoinPreco do database.py
-from database.tabela_bitcoin_precos import Base, BitcoinPreco
+from database import Base, BitcoinPreco
 
 # Carrega variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -110,7 +110,7 @@ def pipeline_bitcoin():
 
 if __name__ == "__main__":
     criar_tabela()
-    logger.info("Iniciando pipeline ETL com atualização a cada 15 segundos... (CTRL+C para interromper)")
+    logger.info("Iniciando pipeline ETL com atualização a cada 15 segundos...")
 
     while True:
         try:
